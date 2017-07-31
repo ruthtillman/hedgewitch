@@ -53,4 +53,6 @@ You can change the * into *.jpg or any extension if you're only targeting one ki
 
 To test whether any files in the directory still contain spaces, run:
 
-`find . -name "* *" | wc -l`
+```
+find . -name "* *" | wc -l
+```
