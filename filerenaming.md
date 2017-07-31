@@ -4,7 +4,9 @@
 
 Note, the way these scripts currently work, they'll only change the first instance of the issue in your filename. The easiest way to check if any still exist in the directory (and note, this will also check subdirectories) is to run:
 
-`find . -name "*wordOrSpace*" | wc -l`
+```
+find . -name "*wordOrSpace*" | wc -l
+```
 
 where wordOrSpace is the word or space you're looking for. This will give you an output count of how many files it still appears in. Normally, when I'm fixing something like a space,
 
@@ -34,11 +36,14 @@ or vice-versa:
 
 Note, the "find" method returns filenames differently and in a way that doesn't work well for handling spaces or ampersands.
 
-Spaces: ```
+Spaces:
+```
 for f in *; do mv "$f" "`echo $f | sed s/\ /_/`"; done
 ```
 
-Ampersands: ```
+Ampersands:
+
+```
 for f in *; do mv "$f" "`echo $f | sed s/\&/_/`"; done
 ```
 
